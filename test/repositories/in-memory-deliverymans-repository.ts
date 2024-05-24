@@ -12,6 +12,10 @@ export class InMemoryDeliverymansRepository implements DeliverymansRepository {
     return this.items.find(item => item.cpf === cpf) ?? null
   }
 
+  async findByEmail(email: string): Promise<Deliveryman | null> {
+    return this.items.find(item => item.email === email) ?? null
+  }
+
   async findById(id: string): Promise<Deliveryman | null> {
     return this.items.find(item => item.id.toString() === id) ?? null
   }

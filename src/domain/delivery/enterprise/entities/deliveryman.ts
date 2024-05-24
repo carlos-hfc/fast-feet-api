@@ -1,7 +1,7 @@
 import { Entity } from "@/core/entities/entity"
 import { UniqueEntityID } from "@/core/entities/unique-entity-id"
 
-export interface DeliverProps {
+export interface DeliverymanProps {
   name: string
   email: string
   cpf: string
@@ -10,7 +10,7 @@ export interface DeliverProps {
   longitude: number
 }
 
-export class Deliver extends Entity<DeliverProps> {
+export class Deliveryman extends Entity<DeliverymanProps> {
   get name() {
     return this.props.name
   }
@@ -47,9 +47,9 @@ export class Deliver extends Entity<DeliverProps> {
     this.props.longitude = longitude
   }
 
-  static create(props: DeliverProps, id?: UniqueEntityID) {
-    const deliver = new Deliver(props, id)
+  static create(props: DeliverymanProps, id?: UniqueEntityID) {
+    const deliveryman = new Deliveryman(props, id)
 
-    return deliver
+    return deliveryman
   }
 }

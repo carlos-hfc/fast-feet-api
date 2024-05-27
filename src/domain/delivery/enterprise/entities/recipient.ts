@@ -55,6 +55,38 @@ export class Recipient extends Entity<RecipientProps> {
     return this.props.state
   }
 
+  set latitude(latitude: number) {
+    this.props.latitude = latitude
+  }
+
+  set longitude(longitude: number) {
+    this.props.longitude = longitude
+  }
+
+  set zipCode(zipCode: string) {
+    this.props.zipCode = zipCode
+  }
+
+  set address(address: string) {
+    this.props.address = address
+  }
+
+  set complement(complement: string | undefined | null) {
+    this.props.complement = complement
+  }
+
+  set district(district: string) {
+    this.props.district = district
+  }
+
+  set city(city: string) {
+    this.props.city = city
+  }
+
+  set state(state: string) {
+    this.props.state = state
+  }
+
   static create(props: RecipientProps, id?: UniqueEntityID) {
     const recipient = new Recipient(props, id)
 

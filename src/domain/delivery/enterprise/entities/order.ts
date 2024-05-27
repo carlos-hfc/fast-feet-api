@@ -71,10 +71,14 @@ export class Order extends Entity<OrderProps> {
     }
   }
 
-  static create(props: Optional<OrderProps, "createdAt">, id?: UniqueEntityID) {
+  static create(
+    props: Optional<OrderProps, "createdAt" | "status">,
+    id?: UniqueEntityID,
+  ) {
     const order = new Order(
       {
         ...props,
+        status: props.status ?? "waiting",
         createdAt: props.createdAt ?? new Date(),
       },
       id,

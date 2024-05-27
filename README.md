@@ -50,7 +50,7 @@ npm run dev
 - :ballot_box_with_check: Deve ser possível realizar o CRUD dos entregadores
 - :white_large_square: Deve ser possível realizar o CRUD das encomendas
 - :ballot_box_with_check: Deve ser possível realizar o CRUD dos destinatários
-- :white_large_square: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
+- :ballot_box_with_check: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
 - :white_large_square: Deve ser possível retirar uma encomenda
 - :white_large_square: Deve ser possível marcar uma encomenda como entregue
 - :white_large_square: Deve ser possível marcar uma encomenda como devolvida

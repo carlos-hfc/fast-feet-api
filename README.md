@@ -1,73 +1,81 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <img src="https://img.shields.io/badge/node-v18.18.2-339933?style=flat&logo=nodedotjs&logoColor=%23339933" />
+  <img src="https://img.shields.io/badge/npm-v9.8.1-CB3837?style=flat&logo=npm" />
+  <img src="https://img.shields.io/badge/feito_por-Carlos_Faustino-black" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# :bulb: Sobre
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+A **Fast Feet** é uma aplicação para controle de encomendas de uma transportadora desenvolvido no módulo sobre API REST da formação de Node.js da Rocketseat.
+
+## :page_with_curl: Pré-requisitos
+
+1. Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. 
+    <a href="https://nodejs.org">
+      <img width="24" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js"/>
+    </a>
+
+## :gear: Configuração
+
+1. Clone o repositório para sua máquina local:
+
+```bash
+git clone https://github.com/carlos-hfc/fast-feet-api
+```
+
+2. Acesse o diretório do projeto:
+
+```bash
+cd fast-feet-api
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Rode a aplicação
+
+```bash
+npm run dev
+```
+
+## :computer_mouse: Features
+
+### Requisitos funcionais
+
+- :ballot_box_with_check: A aplicação deve ter dois tipos de usuário, entregador e/ou admin
+- :ballot_box_with_check: Deve ser possível realizar login com CPF e Senha
+- :white_large_square: Deve ser possível realizar o CRUD dos entregadores
+- :white_large_square: Deve ser possível realizar o CRUD das encomendas
+- :white_large_square: Deve ser possível realizar o CRUD dos destinatários
+- :white_large_square: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
+- :white_large_square: Deve ser possível retirar uma encomenda
+- :white_large_square: Deve ser possível marcar uma encomenda como entregue
+- :white_large_square: Deve ser possível marcar uma encomenda como devolvida
+- :white_large_square: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
+- :white_large_square: Deve ser possível alterar a senha de um usuário
+- :white_large_square: Deve ser possível listar as entregas de um usuário
+- :white_large_square: Deve ser possível notificar o destinatário a cada alteração no status da encomenda
+
+### Regras de negócio
+
+- :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD nas encomendas
+- :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos entregadores
+- :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos destinatários
+- :white_large_square: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto
+- :white_large_square: Somente o entregador que retirou a encomenda pode marcar ela como entregue
+- :white_large_square: Somente o admin pode alterar a senha de um usuário
+- :white_large_square: Não deve ser possível um entregador listar as encomendas de outro entregador
+
+## :computer: Tecnologias utilizadas
+
+<p float="left">
+  <img width="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js"/>
+  <img width="50" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript" title="TypeScript"/>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## :page_facing_up: Licença
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).

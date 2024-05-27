@@ -47,9 +47,9 @@ npm run dev
 
 - :ballot_box_with_check: A aplicação deve ter dois tipos de usuário, entregador e/ou admin
 - :ballot_box_with_check: Deve ser possível realizar login com CPF e Senha
-- :white_large_square: Deve ser possível realizar o CRUD dos entregadores
+- :ballot_box_with_check: Deve ser possível realizar o CRUD dos entregadores
 - :white_large_square: Deve ser possível realizar o CRUD das encomendas
-- :white_large_square: Deve ser possível realizar o CRUD dos destinatários
+- :ballot_box_with_check: Deve ser possível realizar o CRUD dos destinatários
 - :white_large_square: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
 - :white_large_square: Deve ser possível retirar uma encomenda
 - :white_large_square: Deve ser possível marcar uma encomenda como entregue

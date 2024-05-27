@@ -52,7 +52,12 @@ export class Order extends Entity<OrderProps> {
     this.props.updatedAt = new Date()
   }
 
-  set status(status: OrderStatus) {
+  set deliverymanId(deliverymanId) {
+    this.props.deliverymanId = deliverymanId
+    this.touch()
+  }
+
+  set status(status) {
     this.props.status = status
 
     switch (status) {

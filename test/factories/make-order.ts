@@ -8,7 +8,6 @@ export function makeOrder(
   return Order.create(
     {
       recipientId: new UniqueEntityID(),
-      status: "waiting",
       ...override,
     },
     id,

@@ -53,7 +53,7 @@ npm run dev
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
 - :ballot_box_with_check: Deve ser possível retirar uma encomenda
 - :white_large_square: Deve ser possível marcar uma encomenda como entregue
-- :white_large_square: Deve ser possível marcar uma encomenda como devolvida
+- :ballot_box_with_check: Deve ser possível marcar uma encomenda como devolvida
 - :white_large_square: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
 - :ballot_box_with_check: Deve ser possível alterar a senha de um usuário
 - :white_large_square: Deve ser possível listar as entregas de um usuário

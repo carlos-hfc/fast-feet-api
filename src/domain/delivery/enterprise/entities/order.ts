@@ -71,6 +71,7 @@ export class Order extends Entity<OrderProps> {
         break
       case "returned":
         this.props.returnedAt = new Date()
+        this.props.deliverymanId = null
         this.touch()
         break
     }

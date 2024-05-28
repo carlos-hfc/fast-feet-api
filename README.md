@@ -54,7 +54,7 @@ npm run dev
 - :ballot_box_with_check: Deve ser possível retirar uma encomenda
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como entregue
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como devolvida
-- :white_large_square: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
+- :ballot_box_with_check: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
 - :ballot_box_with_check: Deve ser possível alterar a senha de um usuário
 - :ballot_box_with_check: Deve ser possível listar as entregas de um usuário
 - :white_large_square: Deve ser possível notificar o destinatário a cada alteração no status da encomenda

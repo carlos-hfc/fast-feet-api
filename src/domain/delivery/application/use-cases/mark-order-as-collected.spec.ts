@@ -72,7 +72,7 @@ describe("MarkOrderAsCollectedUseCase", () => {
     expect(result.value).toBeInstanceOf(ResourceNotFound)
   })
 
-  it("should not be able to mark an order as collected if status is not waiting", async () => {
+  it("should not be able to mark an order as collected if status is not waiting or returned", async () => {
     const deliveryman = makeDeliveryman()
     const order = makeOrder({
       status: "collected",

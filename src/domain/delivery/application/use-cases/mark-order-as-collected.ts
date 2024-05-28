@@ -37,7 +37,7 @@ export class MarkOrderAsCollectedUseCase {
       return left(new ResourceNotFound())
     }
 
-    if (order.status !== "waiting") {
+    if (order.status !== "waiting" && order.status !== "returned") {
       return left(new NotAllowed())
     }
 

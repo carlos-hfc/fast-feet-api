@@ -52,7 +52,7 @@ npm run dev
 - :ballot_box_with_check: Deve ser possível realizar o CRUD dos destinatários
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como aguardando (Disponível para retirada)
 - :ballot_box_with_check: Deve ser possível retirar uma encomenda
-- :white_large_square: Deve ser possível marcar uma encomenda como entregue
+- :ballot_box_with_check: Deve ser possível marcar uma encomenda como entregue
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como devolvida
 - :white_large_square: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
 - :ballot_box_with_check: Deve ser possível alterar a senha de um usuário
@@ -65,7 +65,7 @@ npm run dev
 - :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos entregadores
 - :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos destinatários
 - :white_large_square: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto
-- :white_large_square: Somente o entregador que retirou a encomenda pode marcar ela como entregue
+- :ballot_box_with_check: Somente o entregador que retirou a encomenda pode marcar ela como entregue
 - :white_large_square: Somente o admin pode alterar a senha de um usuário
 - :white_large_square: Não deve ser possível um entregador listar as encomendas de outro entregador
 

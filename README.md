@@ -56,7 +56,7 @@ npm run dev
 - :ballot_box_with_check: Deve ser possível marcar uma encomenda como devolvida
 - :white_large_square: Deve ser possível listar as encomendas com endereços de entrega próximo ao local do entregador
 - :ballot_box_with_check: Deve ser possível alterar a senha de um usuário
-- :white_large_square: Deve ser possível listar as entregas de um usuário
+- :ballot_box_with_check: Deve ser possível listar as entregas de um usuário
 - :white_large_square: Deve ser possível notificar o destinatário a cada alteração no status da encomenda
 
 ### Regras de negócio
@@ -67,7 +67,7 @@ npm run dev
 - :white_large_square: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto
 - :ballot_box_with_check: Somente o entregador que retirou a encomenda pode marcar ela como entregue
 - :white_large_square: Somente o admin pode alterar a senha de um usuário
-- :white_large_square: Não deve ser possível um entregador listar as encomendas de outro entregador
+- :ballot_box_with_check: Não deve ser possível um entregador listar as encomendas de outro entregador
 
 ## :computer: Tecnologias utilizadas
 

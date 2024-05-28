@@ -9,7 +9,9 @@ export class InMemoryOrdersRepository implements OrdersRepository {
   }
 
   async findManyByDeliverymanId(deliverymanId: string): Promise<Order[]> {
-    return this.items
+    return this.items.filter(
+      item => item.deliverymanId?.toString() === deliverymanId,
+    )
   }
 
   async findById(id: string): Promise<Order | null> {

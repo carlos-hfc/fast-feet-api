@@ -2,14 +2,14 @@ import { Entity } from "@/core/entities/entity"
 import { UniqueEntityID } from "@/core/entities/unique-entity-id"
 import { Optional } from "@/core/types/optional"
 
-export type OrderStatus = "waiting" | "collected" | "deliverymaned" | "returned"
+export type OrderStatus = "waiting" | "collected" | "delivered" | "returned"
 
 export interface OrderProps {
   deliverymanId?: UniqueEntityID | null
   recipientId: UniqueEntityID
   status: OrderStatus
   collectedAt?: Date | null
-  deliverymanedAt?: Date | null
+  deliveredAt?: Date | null
   returnedAt?: Date | null
   createdAt: Date
   updatedAt?: Date | null
@@ -32,8 +32,8 @@ export class Order extends Entity<OrderProps> {
     return this.props.collectedAt
   }
 
-  get deliverymanedAt() {
-    return this.props.deliverymanedAt
+  get deliveredAt() {
+    return this.props.deliveredAt
   }
 
   get returnedAt() {
@@ -65,8 +65,8 @@ export class Order extends Entity<OrderProps> {
         this.props.collectedAt = new Date()
         this.touch()
         break
-      case "deliverymaned":
-        this.props.deliverymanedAt = new Date()
+      case "delivered":
+        this.props.deliveredAt = new Date()
         this.touch()
         break
       case "returned":

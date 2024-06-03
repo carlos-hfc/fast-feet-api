@@ -6,11 +6,14 @@ import { NotAllowed } from "@/core/errors/not-allowed"
 import { ResourceNotFound } from "@/core/errors/resource-not-found"
 
 import { Order } from "../../enterprise/entities/order"
+import { OrderAttachment } from "../../enterprise/entities/order-attachment"
+import { OrderAttachmentList } from "../../enterprise/entities/order-attachment-list"
 import { OrdersRepository } from "../repositories/orders-repository"
 
 type MarkOrderAsDeliveredUseCaseRequest = {
   orderId: string
   deliverymanId: string
+  attachmentsIds: string[]
 }
 
 type MarkOrderAsDeliveredUseCaseResponse = Either<
@@ -27,6 +30,7 @@ export class MarkOrderAsDeliveredUseCase {
   async execute({
     orderId,
     deliverymanId,
+    attachmentsIds,
   }: MarkOrderAsDeliveredUseCaseRequest): Promise<MarkOrderAsDeliveredUseCaseResponse> {
     const order = await this.ordersRepository.findById(orderId)
 
@@ -35,12 +39,21 @@ export class MarkOrderAsDeliveredUseCase {
     }
 
     if (
+      attachmentsIds.length <= 0 ||
       order.status !== "collected" ||
       !order.deliverymanId?.equals(new UniqueEntityID(deliverymanId))
     ) {
       return left(new NotAllowed())
     }
 
+    const orderAttachments = attachmentsIds.map(attachmentId => {
+      return OrderAttachment.create({
+        attachmentId: new UniqueEntityID(attachmentId),
+        orderId: order.id,
+      })
+    })
+
+    order.attachments = new OrderAttachmentList(orderAttachments)
     order.status = "delivered"
 
     await this.ordersRepository.save(order)

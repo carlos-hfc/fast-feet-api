@@ -64,7 +64,7 @@ npm run dev
 - :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD nas encomendas
 - :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos entregadores
 - :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD dos destinatários
-- :white_large_square: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto
+- :ballot_box_with_check: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto
 - :ballot_box_with_check: Somente o entregador que retirou a encomenda pode marcar ela como entregue
 - :white_large_square: Somente o admin pode alterar a senha de um usuário
 - :ballot_box_with_check: Não deve ser possível um entregador listar as encomendas de outro entregador

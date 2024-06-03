@@ -3,6 +3,7 @@ import { UniqueEntityID } from "@/core/entities/unique-entity-id"
 import { Optional } from "@/core/types/optional"
 
 import { UpdateOrderStatusEvent } from "../events/update-order-status-event"
+import { OrderAttachmentList } from "./order-attachment-list"
 
 export type OrderStatus = "waiting" | "collected" | "delivered" | "returned"
 
@@ -15,6 +16,7 @@ export interface OrderProps {
   returnedAt?: Date | null
   createdAt: Date
   updatedAt?: Date | null
+  attachments: OrderAttachmentList
 }
 
 export class Order extends AggregateRoot<OrderProps> {
@@ -50,6 +52,10 @@ export class Order extends AggregateRoot<OrderProps> {
     return this.props.updatedAt
   }
 
+  get attachments() {
+    return this.props.attachments
+  }
+
   private touch() {
     this.props.updatedAt = new Date()
   }
@@ -81,14 +87,20 @@ export class Order extends AggregateRoot<OrderProps> {
     }
   }
 
+  set attachments(attachments) {
+    this.props.attachments = attachments
+    this.touch()
+  }
+
   static create(
-    props: Optional<OrderProps, "createdAt" | "status">,
+    props: Optional<OrderProps, "createdAt" | "status" | "attachments">,
     id?: UniqueEntityID,
   ) {
     const order = new Order(
       {
         ...props,
         status: props.status ?? "waiting",
+        attachments: new OrderAttachmentList(),
         createdAt: props.createdAt ?? new Date(),
       },
       id,

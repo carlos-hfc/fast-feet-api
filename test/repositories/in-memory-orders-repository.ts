@@ -1,3 +1,4 @@
+import { DomainEvents } from "@/core/events/domain-events"
 import {
   FindManyNearbyParams,
   OrdersRepository,
@@ -53,10 +54,14 @@ export class InMemoryOrdersRepository implements OrdersRepository {
     const itemIndex = this.items.findIndex(item => item.id === order.id)
 
     this.items[itemIndex] = order
+
+    DomainEvents.dispatchEventsForAggregate(order.id)
   }
 
   async create(order: Order): Promise<void> {
     this.items.push(order)
+
+    DomainEvents.dispatchEventsForAggregate(order.id)
   }
 
   async delete(order: Order): Promise<void> {

@@ -5,6 +5,7 @@ import { AuthModule } from "./auth/auth.module"
 import { envSchema } from "./env/env"
 import { EnvModule } from "./env/env.module"
 import { EnvService } from "./env/env.service"
+import { HttpModule } from "./http/http.module"
 
 @Module({
   imports: [
@@ -14,8 +15,8 @@ import { EnvService } from "./env/env.service"
     }),
     AuthModule,
     EnvModule,
+    HttpModule,
   ],
-  controllers: [],
   providers: [EnvService],
 })
 export class AppModule {}

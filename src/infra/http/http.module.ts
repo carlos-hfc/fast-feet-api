@@ -6,6 +6,7 @@ import { CreateDeliverymanUseCase } from "@/domain/delivery/application/use-case
 import { CreateRecipientUseCase } from "@/domain/delivery/application/use-cases/create-recipient"
 import { DeleteDeliverymanUseCase } from "@/domain/delivery/application/use-cases/delete-deliveryman"
 import { EditDeliverymanUseCase } from "@/domain/delivery/application/use-cases/edit-deliveryman"
+import { EditRecipientUseCase } from "@/domain/delivery/application/use-cases/edit-recipient"
 import { FetchDeliverymansUseCase } from "@/domain/delivery/application/use-cases/fetch-deliverymans"
 import { RegisterAdminUseCase } from "@/domain/delivery/application/use-cases/register-admin"
 
@@ -17,6 +18,7 @@ import { CreateDeliverymanController } from "./controllers/create-deliveryman.co
 import { CreateRecipientController } from "./controllers/create-recipient.controller"
 import { DeleteDeliverymanController } from "./controllers/delete-deliveryman.controller"
 import { EditDeliverymanController } from "./controllers/edit-deliveryman.controller"
+import { EditRecipientController } from "./controllers/edit-recipient.controller"
 import { FetchDeliverymansController } from "./controllers/fetch-deliverymans.controller"
 import { RegisterAdminController } from "./controllers/register-admin.controller"
 
@@ -31,6 +33,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     FetchDeliverymansController,
     AuthenticateDeliverymanController,
     CreateRecipientController,
+    EditRecipientController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -41,6 +44,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     FetchDeliverymansUseCase,
     AuthenticateDeliverymanUseCase,
     CreateRecipientUseCase,
+    EditRecipientUseCase,
   ],
 })
 export class HttpModule {}

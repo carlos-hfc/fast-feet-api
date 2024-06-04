@@ -3,6 +3,7 @@ import { Module } from "@nestjs/common"
 import { AuthenticateAdminUseCase } from "@/domain/delivery/application/use-cases/authenticate-admin"
 import { AuthenticateDeliverymanUseCase } from "@/domain/delivery/application/use-cases/authenticate-deliveryman"
 import { CreateDeliverymanUseCase } from "@/domain/delivery/application/use-cases/create-deliveryman"
+import { CreateOrderUseCase } from "@/domain/delivery/application/use-cases/create-order"
 import { CreateRecipientUseCase } from "@/domain/delivery/application/use-cases/create-recipient"
 import { DeleteDeliverymanUseCase } from "@/domain/delivery/application/use-cases/delete-deliveryman"
 import { DeleteOrderUseCase } from "@/domain/delivery/application/use-cases/delete-order"
@@ -18,6 +19,7 @@ import { DatabaseModule } from "../database/database.module"
 import { AuthenticateAdminController } from "./controllers/authenticate-admin.controller"
 import { AuthenticateDeliverymanController } from "./controllers/authenticate-deliveryman.controller"
 import { CreateDeliverymanController } from "./controllers/create-deliveryman.controller"
+import { CreateOrderController } from "./controllers/create-order.controller"
 import { CreateRecipientController } from "./controllers/create-recipient.controller"
 import { DeleteDeliverymanController } from "./controllers/delete-deliveryman.controller"
 import { DeleteOrderController } from "./controllers/delete-order.controller"
@@ -43,6 +45,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     DeleteRecipientController,
     FetchRecipientsController,
     DeleteOrderController,
+    CreateOrderController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -57,6 +60,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     DeleteRecipientUseCase,
     FetchRecipientsUseCase,
     DeleteOrderUseCase,
+    CreateOrderUseCase,
   ],
 })
 export class HttpModule {}

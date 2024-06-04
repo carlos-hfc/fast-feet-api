@@ -18,7 +18,7 @@ export function makeDeliveryman(
       name: faker.person.fullName(),
       email: faker.internet.email(),
       password: faker.internet.password(),
-      cpf: "12345678911",
+      cpf: "12345678900",
       latitude: faker.location.latitude(),
       longitude: faker.location.longitude(),
       ...override,

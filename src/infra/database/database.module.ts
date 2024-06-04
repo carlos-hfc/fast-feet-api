@@ -1,13 +1,17 @@
 import { Module } from "@nestjs/common"
 
 import { AdminsRepository } from "@/domain/delivery/application/repositories/admins-repository"
+import { AttachmentsRepository } from "@/domain/delivery/application/repositories/attachments-repository"
 import { DeliverymansRepository } from "@/domain/delivery/application/repositories/deliverymans-repository"
+import { OrderAttachmentsRepository } from "@/domain/delivery/application/repositories/order-attachments-repository"
 import { OrdersRepository } from "@/domain/delivery/application/repositories/orders-repository"
 import { RecipientsRepository } from "@/domain/delivery/application/repositories/recipients-repository"
 
 import { PrismaService } from "./prisma/prisma.service"
 import { PrismaAdminsRepository } from "./prisma/repositories/prisma-admins-repository"
+import { PrismaAttachmentsRepository } from "./prisma/repositories/prisma-attachments-repository"
 import { PrismaDeliverymansRepository } from "./prisma/repositories/prisma-deliverymans-repository"
+import { PrismaOrderAttachmentsRepository } from "./prisma/repositories/prisma-order-attachments-repository"
 import { PrismaOrdersRepository } from "./prisma/repositories/prisma-orders-repository"
 import { PrismaRecipientsRepository } from "./prisma/repositories/prisma-recipients-repository"
 
@@ -30,6 +34,14 @@ import { PrismaRecipientsRepository } from "./prisma/repositories/prisma-recipie
       provide: OrdersRepository,
       useClass: PrismaOrdersRepository,
     },
+    {
+      provide: OrderAttachmentsRepository,
+      useClass: PrismaOrderAttachmentsRepository,
+    },
+    {
+      provide: AttachmentsRepository,
+      useClass: PrismaAttachmentsRepository,
+    },
   ],
   exports: [
     PrismaService,
@@ -37,6 +49,8 @@ import { PrismaRecipientsRepository } from "./prisma/repositories/prisma-recipie
     DeliverymansRepository,
     RecipientsRepository,
     OrdersRepository,
+    AttachmentsRepository,
+    OrderAttachmentsRepository,
   ],
 })
 export class DatabaseModule {}

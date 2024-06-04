@@ -77,8 +77,8 @@ model Attachment {
   title String
   url   String
 
-  order   Order  @relation(fields: [orderId], references: [id])
-  orderId String
+  order   Order?  @relation(fields: [orderId], references: [id])
+  orderId String?
 
   @@map("attachments")
 }

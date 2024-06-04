@@ -61,7 +61,7 @@ npm run dev
 
 ### Regras de negócio
 
-- :white_large_square: Somente usuário do tipo admin pode realizar operações de CRUD nas encomendas
+- :ballot_box_with_check: Somente usuário do tipo admin pode realizar operações de CRUD nas encomendas
 - :ballot_box_with_check: Somente usuário do tipo admin pode realizar operações de CRUD dos entregadores
 - :ballot_box_with_check: Somente usuário do tipo admin pode realizar operações de CRUD dos destinatários
 - :ballot_box_with_check: Para marcar uma encomenda como entregue é obrigatório o envio de uma foto

@@ -13,6 +13,7 @@ import { EditRecipientUseCase } from "@/domain/delivery/application/use-cases/ed
 import { FetchDeliverymansUseCase } from "@/domain/delivery/application/use-cases/fetch-deliverymans"
 import { FetchRecipientsUseCase } from "@/domain/delivery/application/use-cases/fetch-recipients"
 import { MarkOrderAsCollectedUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-collected"
+import { MarkOrderAsDeliveredUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-delivered"
 import { MarkOrderAsReturnedUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-returned"
 import { RegisterAdminUseCase } from "@/domain/delivery/application/use-cases/register-admin"
 
@@ -31,6 +32,7 @@ import { EditRecipientController } from "./controllers/edit-recipient.controller
 import { FetchDeliverymansController } from "./controllers/fetch-deliverymans.controller"
 import { FetchRecipientsController } from "./controllers/fetch-recipients.controller"
 import { MarkOrderAsCollectedController } from "./controllers/mark-order-as-collected.controller"
+import { MarkOrderAsDeliveredController } from "./controllers/mark-order-as-delivered.controller"
 import { MarkOrderAsReturnedController } from "./controllers/mark-order-as-returned.controller"
 import { RegisterAdminController } from "./controllers/register-admin.controller"
 
@@ -52,6 +54,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     CreateOrderController,
     MarkOrderAsCollectedController,
     MarkOrderAsReturnedController,
+    MarkOrderAsDeliveredController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -69,6 +72,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     CreateOrderUseCase,
     MarkOrderAsCollectedUseCase,
     MarkOrderAsReturnedUseCase,
+    MarkOrderAsDeliveredUseCase,
   ],
 })
 export class HttpModule {}

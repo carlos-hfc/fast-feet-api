@@ -48,6 +48,7 @@ export class AuthenticateDeliverymanUseCase {
 
     const token = await this.encrypter.encrypt({
       sub: deliveryman.id.toString(),
+      role: "DELIVERYMAN",
     })
 
     return right({ token })

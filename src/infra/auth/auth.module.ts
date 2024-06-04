@@ -15,11 +15,12 @@ import { JwtAuthGuard } from "./jwt-auth.guard"
       imports: [EnvModule],
       inject: [EnvService],
       global: true,
-      useFactory() {
+      useFactory(config: EnvService) {
         return {
           signOptions: {
             expiresIn: "7d",
           },
+          secret: config.get("JWT_SECRET"),
         }
       },
     }),

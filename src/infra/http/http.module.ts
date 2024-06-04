@@ -9,6 +9,7 @@ import { DeleteRecipientUseCase } from "@/domain/delivery/application/use-cases/
 import { EditDeliverymanUseCase } from "@/domain/delivery/application/use-cases/edit-deliveryman"
 import { EditRecipientUseCase } from "@/domain/delivery/application/use-cases/edit-recipient"
 import { FetchDeliverymansUseCase } from "@/domain/delivery/application/use-cases/fetch-deliverymans"
+import { FetchRecipientsUseCase } from "@/domain/delivery/application/use-cases/fetch-recipients"
 import { RegisterAdminUseCase } from "@/domain/delivery/application/use-cases/register-admin"
 
 import { CryptographyModule } from "../cryptography/cryptography.module"
@@ -22,6 +23,7 @@ import { DeleteRecipientController } from "./controllers/delete-recipient.contro
 import { EditDeliverymanController } from "./controllers/edit-deliveryman.controller"
 import { EditRecipientController } from "./controllers/edit-recipient.controller"
 import { FetchDeliverymansController } from "./controllers/fetch-deliverymans.controller"
+import { FetchRecipientsController } from "./controllers/fetch-recipients.controller"
 import { RegisterAdminController } from "./controllers/register-admin.controller"
 
 @Module({
@@ -37,6 +39,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     CreateRecipientController,
     EditRecipientController,
     DeleteRecipientController,
+    FetchRecipientsController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -49,6 +52,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     CreateRecipientUseCase,
     EditRecipientUseCase,
     DeleteRecipientUseCase,
+    FetchRecipientsUseCase,
   ],
 })
 export class HttpModule {}

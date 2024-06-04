@@ -13,7 +13,11 @@ export class PrismaDeliverymansRepository implements DeliverymansRepository {
   constructor(private prisma: PrismaService) {}
 
   async findAll(): Promise<Deliveryman[]> {
-    const deliverymans = await this.prisma.user.findMany()
+    const deliverymans = await this.prisma.user.findMany({
+      where: {
+        role: "DELIVERYMAN",
+      },
+    })
 
     return deliverymans.map(PrismaDeliverymanMapper.toDomin)
   }

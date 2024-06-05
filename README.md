@@ -35,7 +35,19 @@ cd fast-feet-api
 npm install
 ```
 
-4. Rode a aplicação
+4. Crie um arquivo `.env.local` na raiz do projeto e adicione as seguintes chaves:
+
+```env
+NODE_ENV=""
+DATABASE_URL=""
+JWT_SECRET=""
+CLOUDFLARE_ACCOUNT_ID=""
+AWS_BUCKET_NAME=""
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
+```
+
+5. Rode a aplicação
 
 ```bash
 npm run dev

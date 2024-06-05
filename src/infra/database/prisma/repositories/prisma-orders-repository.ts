@@ -38,11 +38,13 @@ export class PrismaOrdersRepository implements OrdersRepository {
   }: FindManyNearbyParams): Promise<Order[]> {
     const orders = await this.prisma.$queryRaw<PrismaOrder[]>`
       SELECT 
-        * 
-      FROM orders
+        o.*
+      FROM recipients r
+      JOIN orders o ON o."recipientId" = r."id"
       WHERE (
         6371 * acos( cos( radians(${latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( latitude ) ) ) 
       ) <= 10
+      AND o."status" = 'WAITING'
     `
 
     return orders.map(PrismaOrderMapper.toDomin)

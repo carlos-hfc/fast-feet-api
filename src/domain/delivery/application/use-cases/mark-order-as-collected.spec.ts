@@ -2,12 +2,14 @@ import { makeDeliveryman } from "test/factories/make-deliveryman"
 import { makeOrder } from "test/factories/make-order"
 import { InMemoryDeliverymansRepository } from "test/repositories/in-memory-deliverymans-repository"
 import { InMemoryOrdersRepository } from "test/repositories/in-memory-orders-repository"
+import { InMemoryRecipientsRepository } from "test/repositories/in-memory-recipients-repository"
 
 import { NotAllowed } from "@/core/errors/not-allowed"
 import { ResourceNotFound } from "@/core/errors/resource-not-found"
 
 import { MarkOrderAsCollectedUseCase } from "./mark-order-as-collected"
 
+let inMemoryRecipientsRepository: InMemoryRecipientsRepository
 let inMemoryOrdersRepository: InMemoryOrdersRepository
 let inMemoryDeliverymansRepository: InMemoryDeliverymansRepository
 let sut: MarkOrderAsCollectedUseCase
@@ -15,7 +17,10 @@ let sut: MarkOrderAsCollectedUseCase
 describe("MarkOrderAsCollectedUseCase", () => {
   beforeEach(() => {
     inMemoryDeliverymansRepository = new InMemoryDeliverymansRepository()
-    inMemoryOrdersRepository = new InMemoryOrdersRepository()
+    inMemoryRecipientsRepository = new InMemoryRecipientsRepository()
+    inMemoryOrdersRepository = new InMemoryOrdersRepository(
+      inMemoryRecipientsRepository,
+    )
     sut = new MarkOrderAsCollectedUseCase(
       inMemoryOrdersRepository,
       inMemoryDeliverymansRepository,

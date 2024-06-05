@@ -1,16 +1,21 @@
 import { makeOrder } from "test/factories/make-order"
 import { InMemoryOrdersRepository } from "test/repositories/in-memory-orders-repository"
+import { InMemoryRecipientsRepository } from "test/repositories/in-memory-recipients-repository"
 
 import { ResourceNotFound } from "@/core/errors/resource-not-found"
 
 import { DeleteOrderUseCase } from "./delete-order"
 
+let inMemoryRecipientsRepository: InMemoryRecipientsRepository
 let inMemoryOrdersRepository: InMemoryOrdersRepository
 let sut: DeleteOrderUseCase
 
 describe("DeleteOrderUseCase", () => {
   beforeEach(() => {
-    inMemoryOrdersRepository = new InMemoryOrdersRepository()
+    inMemoryRecipientsRepository = new InMemoryRecipientsRepository()
+    inMemoryOrdersRepository = new InMemoryOrdersRepository(
+      inMemoryRecipientsRepository,
+    )
     sut = new DeleteOrderUseCase(inMemoryOrdersRepository)
   })
 

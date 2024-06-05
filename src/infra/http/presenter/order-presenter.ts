@@ -1,19 +1,18 @@
-import { Recipient } from "@/domain/delivery/enterprise/entities/recipient"
+import { Order } from "@/domain/delivery/enterprise/entities/order"
 
-export class RecipientPresenter {
-  static toHTTP(recipient: Recipient) {
+export class OrderPresenter {
+  static toHTTP(order: Order) {
     return {
-      id: recipient.id.toString(),
-      name: recipient.name,
-      email: recipient.email,
-      latitude: recipient.latitude,
-      longitude: recipient.longitude,
-      address: recipient.address,
-      city: recipient.city,
-      state: recipient.state,
-      district: recipient.district,
-      zipCode: recipient.zipCode,
-      complement: recipient.complement,
+      id: order.id.toString(),
+      recipientId: order.recipientId.toString(),
+      deliverymanId: order.deliverymanId?.toString(),
+      attachments: order.attachments,
+      collectedAt: order.collectedAt,
+      createdAt: order.createdAt,
+      deliveredAt: order.deliveredAt,
+      returnedAt: order.returnedAt,
+      status: order.status,
+      updatedAt: order.updatedAt,
     }
   }
 }

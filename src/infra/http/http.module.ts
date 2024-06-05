@@ -11,6 +11,7 @@ import { DeleteRecipientUseCase } from "@/domain/delivery/application/use-cases/
 import { EditDeliverymanUseCase } from "@/domain/delivery/application/use-cases/edit-deliveryman"
 import { EditRecipientUseCase } from "@/domain/delivery/application/use-cases/edit-recipient"
 import { FetchDeliverymansUseCase } from "@/domain/delivery/application/use-cases/fetch-deliverymans"
+import { FetchOrdersByDeliverymanUseCase } from "@/domain/delivery/application/use-cases/fetch-orders-by-deliveryman"
 import { FetchRecipientsUseCase } from "@/domain/delivery/application/use-cases/fetch-recipients"
 import { MarkOrderAsCollectedUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-collected"
 import { MarkOrderAsDeliveredUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-delivered"
@@ -30,6 +31,7 @@ import { DeleteRecipientController } from "./controllers/delete-recipient.contro
 import { EditDeliverymanController } from "./controllers/edit-deliveryman.controller"
 import { EditRecipientController } from "./controllers/edit-recipient.controller"
 import { FetchDeliverymansController } from "./controllers/fetch-deliverymans.controller"
+import { FetchOrdersByDeliverymanController } from "./controllers/fetch-orders-by-deliveryman.controller"
 import { FetchRecipientsController } from "./controllers/fetch-recipients.controller"
 import { MarkOrderAsCollectedController } from "./controllers/mark-order-as-collected.controller"
 import { MarkOrderAsDeliveredController } from "./controllers/mark-order-as-delivered.controller"
@@ -55,6 +57,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     MarkOrderAsCollectedController,
     MarkOrderAsReturnedController,
     MarkOrderAsDeliveredController,
+    FetchOrdersByDeliverymanController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -73,6 +76,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     MarkOrderAsCollectedUseCase,
     MarkOrderAsReturnedUseCase,
     MarkOrderAsDeliveredUseCase,
+    FetchOrdersByDeliverymanUseCase,
   ],
 })
 export class HttpModule {}

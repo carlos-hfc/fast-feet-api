@@ -18,9 +18,11 @@ import { MarkOrderAsCollectedUseCase } from "@/domain/delivery/application/use-c
 import { MarkOrderAsDeliveredUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-delivered"
 import { MarkOrderAsReturnedUseCase } from "@/domain/delivery/application/use-cases/mark-order-as-returned"
 import { RegisterAdminUseCase } from "@/domain/delivery/application/use-cases/register-admin"
+import { UploadAttachmentUseCase } from "@/domain/delivery/application/use-cases/upload-attachment"
 
 import { CryptographyModule } from "../cryptography/cryptography.module"
 import { DatabaseModule } from "../database/database.module"
+import { StorageModule } from "../storage/storage.module"
 import { AuthenticateAdminController } from "./controllers/authenticate-admin.controller"
 import { AuthenticateDeliverymanController } from "./controllers/authenticate-deliveryman.controller"
 import { CreateDeliverymanController } from "./controllers/create-deliveryman.controller"
@@ -39,9 +41,10 @@ import { MarkOrderAsCollectedController } from "./controllers/mark-order-as-coll
 import { MarkOrderAsDeliveredController } from "./controllers/mark-order-as-delivered.controller"
 import { MarkOrderAsReturnedController } from "./controllers/mark-order-as-returned.controller"
 import { RegisterAdminController } from "./controllers/register-admin.controller"
+import { UploadAttachmentController } from "./controllers/upload-attachment.controller"
 
 @Module({
-  imports: [DatabaseModule, CryptographyModule],
+  imports: [DatabaseModule, CryptographyModule, StorageModule],
   controllers: [
     RegisterAdminController,
     AuthenticateAdminController,
@@ -61,6 +64,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     MarkOrderAsDeliveredController,
     FetchOrdersByDeliverymanController,
     FetchNearbyOrdersController,
+    UploadAttachmentController,
   ],
   providers: [
     RegisterAdminUseCase,
@@ -81,6 +85,7 @@ import { RegisterAdminController } from "./controllers/register-admin.controller
     MarkOrderAsDeliveredUseCase,
     FetchOrdersByDeliverymanUseCase,
     FetchNearbyOrdersUseCase,
+    UploadAttachmentUseCase,
   ],
 })
 export class HttpModule {}

@@ -40,7 +40,8 @@ model Recipient {
   city       String
   state      String
 
-  orders Order[]
+  orders        Order[]
+  notifications Notification[]
 
   @@map("recipients")
 }
@@ -81,4 +82,16 @@ model Attachment {
   orderId String?
 
   @@map("attachments")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+
+  recipient   Recipient @relation(fields: [recipientId], references: [id])
+  recipientId String
+
+  @@map("notifications")
 }

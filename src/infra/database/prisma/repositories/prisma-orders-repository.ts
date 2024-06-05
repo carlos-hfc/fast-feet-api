@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common"
 import { Order as PrismaOrder } from "@prisma/client"
 
+import { DomainEvents } from "@/core/events/domain-events"
 import {
   FindManyNearbyParams,
   OrdersRepository,
@@ -71,6 +72,8 @@ export class PrismaOrdersRepository implements OrdersRepository {
       },
       data,
     })
+
+    DomainEvents.dispatchEventsForAggregate(order.id)
   }
 
   async create(order: Order): Promise<void> {
@@ -79,6 +82,8 @@ export class PrismaOrdersRepository implements OrdersRepository {
     await this.prisma.order.create({
       data,
     })
+
+    DomainEvents.dispatchEventsForAggregate(order.id)
   }
 
   async delete(order: Order): Promise<void> {
